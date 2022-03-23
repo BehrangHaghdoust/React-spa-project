@@ -1,10 +1,6 @@
 const ListMember = ({ user }) => {
     return (
-
         <>
-
-
-
                 <div className="col-md-8" key={user.id}>
                     <div className="card"  >
                         <div className="card-header">
@@ -17,7 +13,6 @@ const ListMember = ({ user }) => {
                         </ul>
                     </div>
                 </div>
-         
         </>
     )
 }

@@ -7,7 +7,8 @@ const ListPosts = ({ posts }) => {
                 <div className="col-md-4" key={post.id}>
                     <div className="card"  >
                         <div className="card-header fw-bold">
-                            <Link to="/">{post.title}</Link>
+                            <Link to={`/posts/${post.id}`}>{post.title}</Link>
+
                         </div>
                         <div className="card-body">
                             {post.body}
