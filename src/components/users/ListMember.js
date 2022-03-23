@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
-const ListUsers = ({ users }) => {
+const ListMember = ({ user }) => {
     return (
 
         <>
-            {users.map(user => (
 
 
-                <div className="col-md-4" key={user.id}>
+
+                <div className="col-md-8" key={user.id}>
                     <div className="card"  >
                         <div className="card-header">
-                            <Link to={`/users/${user.id}`}>{user.name}</Link>
+                            <span>{user.name}</span>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">uername : {user.name}</li>
@@ -18,9 +17,9 @@ const ListUsers = ({ users }) => {
                         </ul>
                     </div>
                 </div>
-            ))}
+         
         </>
     )
 }
 
-export default ListUsers;
+export default ListMember;
