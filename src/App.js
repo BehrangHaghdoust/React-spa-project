@@ -1,7 +1,8 @@
 import Header from './components/Header';
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
 import Home from './Pages/Home';
-import RouterUser from './components/users/Router'
+import RouterUser from './Pages/users/Router'
+import RouterPosts from './Pages/posts/Router'
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
 <Header/>
   <Routes>
   <Route path="/" element={<Home/>}/>
-  <Route path="/*" element={<RouterUser/>}/>
+  <Route path="/users/*" element={<RouterUser/>}/>
+  <Route path="/posts/*" element={<RouterPosts/>}/>
   </Routes>
 </BrowserRouter>
 </>
