@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DeletePost from "./DeletePost";
 
 const PostsArticle = ({ post }) => {
     return (
@@ -12,7 +13,8 @@ const PostsArticle = ({ post }) => {
                             {post.body}
                         </div>
                         <div className="card-footer">
-                        <Link to={`/posts/edit/${post.id}`} className="btn btn-danger">edit</Link>
+                        <DeletePost postId={post.id}/>
+                        <Link to={`/posts/edit/${post.id}`} className="btn btn-warning">edit</Link>
 
                         </div>
                     </div>

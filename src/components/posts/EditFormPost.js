@@ -14,7 +14,7 @@ const EditFormPost = ({ post }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true)
-        fetch(`https://jsonplacesholder.typicode.com/posts/${post.id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: title,
@@ -41,7 +41,7 @@ const EditFormPost = ({ post }) => {
             }).catch(err => {
                 setError(err.message)
                 Swal.fire({
-                    title: 'Erro!',
+                    title: 'Error!',
                     text: 'Post does not change !',
                      icon :'warning',
                      confirmButtonText:'OK'
