@@ -2,13 +2,10 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const CreatePost = () => {
-
-
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true)
@@ -35,7 +32,6 @@ const CreatePost = () => {
                   confirmButtonText:'OK'
                 }
                 )
-
 
 
             }).catch(err => {

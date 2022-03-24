@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import PostsArticle from "../../components/posts/PostsArticle";
+import { useParams } from "react-router-dom";
+import EditFormPost from "../../components/posts/EditFormPost";
 
-
-const ShowPost = () => {
+const EditPost = () => {
 
     const { id } = useParams()
     const [post, setPost] = useState(null);
@@ -23,17 +22,16 @@ const ShowPost = () => {
                 setLoading(false)
             })
     }, [id])
-
     return (
 
-<>
-                {error && <div>{error}</div>}
+           <div className="col-md-6">
+
+           <h2>Edit Post :</h2>
+               {error && <div>{error}</div>}
                 {loading && <div className="spinner-border"></div>}
-                {post && <PostsArticle post={post} />}
-                
-</>
+                {post && <EditFormPost post={post}/>}
+           </div>
+
     )
 }
-
-
-export default ShowPost;
+ export default EditPost ;
