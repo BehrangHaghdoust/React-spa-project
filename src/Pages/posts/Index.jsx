@@ -1,34 +1,36 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ListPosts from "../../components/posts/ListPosts";
 
-const IndexPosts = ()=> {
-const [posts ,setPosts] =useState(null);
-const [loading ,setLoading] =useState(true);
-const [error ,setError] =useState(null);
-    useEffect(()=>{
+const IndexPosts = () => {
+    const [posts, setPosts] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/posts")
-  .then(res => res.json())
-  .then(data =>
-   {
-    setPosts(data);
-    setLoading(false)
-    setError(null)
-   }
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data);
+                setLoading(false)
+                setError(null)
+            }
 
-    ).catch(err => {
-        setError(err.message)
-        setLoading(false)
-    })
-    },[])
+            ).catch(err => {
+                setError(err.message)
+                setLoading(false)
+            })
+    }, [])
     return (
-        <div className="container mt-5">
-            <div className="row g-3" >
-                <h2>Posts : </h2>
-                {error && <div>{error}</div>}
-                {loading && <div className="spinner-border"></div>}
-                {posts && <ListPosts posts={posts}/> }
+
+        <>     <h2>Posts : </h2>
+            <div>
+                <Link to="/posts/create" className="btn btn-dark">Create Post</Link>
+
             </div>
-        </div>
+            {error && <div>{error}</div>}
+            {loading && <div className="spinner-border"></div>}
+            {posts && <ListPosts posts={posts} />}
+        </>
     )
 }
 

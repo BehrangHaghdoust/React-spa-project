@@ -26,13 +26,11 @@ const ShowPost = () => {
 
     return (
 
-        <div className="container mt-5">
-            <div className="row g-3" >
+<>
                 {error && <div>{error}</div>}
                 {loading && <div className="spinner-border"></div>}
                 {post && <PostsArticle post={post} />}
-            </div>
-        </div>
+</>
     )
 }
 
